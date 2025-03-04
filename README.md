@@ -12,3 +12,5 @@ Always remember:
 It is not the best way to do it, but it is a way to do it.
 
 :]
+
+Wiki: https://github.com/Drakkxs/ParvusGelu-MaximusKubeJS/wiki
