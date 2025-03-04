@@ -1,5 +1,4 @@
 /// priority: 0
-/// requires: origins
 // Actions based on origins
 // It is not the best way to do it, but it is a way to do it.
 let originsIronManaDebugLogs = false; // Want some debug?

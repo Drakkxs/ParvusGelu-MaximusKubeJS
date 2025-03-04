@@ -1,5 +1,9 @@
-/// priority: 0
-/// requires: botania
+// priority: 0
+// requires: botania
+// requires: irons_spellbooks
+// requires: origins
+// requires: curios
+// requires: toughasnails
 // This script is designed to control startup of the Maximus ScriptPack
 // It is not the best way to do it, but it is a way to do it.
 let debuglogs = false; // Want some debug?

@@ -1,5 +1,4 @@
 /// priority: 0
-/// requires: toughasnails
 // For some reason in toughasnails, flowing water can't be drank.
 // It is not the best way to do it, but it is a way to do it.
 let debuglogs = false; // Want some debug?
