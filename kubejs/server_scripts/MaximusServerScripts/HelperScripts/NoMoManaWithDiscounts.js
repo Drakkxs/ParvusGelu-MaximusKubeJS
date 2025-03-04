@@ -1,6 +1,4 @@
 /// priority: 0
-/// requires: botania
-/// requires: curios
 // This script is designed to make items require mana to be used.
 // It is not the best way to do it, but it is a way to do it.
 let noMoManaWithDiscountsDebug = false; // Want some debug?
