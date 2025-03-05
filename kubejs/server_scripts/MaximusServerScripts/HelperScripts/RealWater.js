@@ -9,8 +9,14 @@ PlayerEvents.tick(event => {
     if (player.age % 10 !== 0) return; // Only check every 5 ticks for performance
     
     let ThirstInstance = ThirstHelper.getThirst(player)
+    let playerReach = null;
+    try {
+        playerReach = player.getAttributeValue('forge:entity_reach');
+    } catch (error) {
+        playerReach = 5;
+    }
 
-    let rayTraceResult = player.rayTrace(5); // 5 block reach
+    let rayTraceResult = player.rayTrace(Math.ceil(playerReach / 2));
     if (rayTraceResult && rayTraceResult.block) {
         let block = rayTraceResult.block;
         let blockStringId = block.id.toString();
