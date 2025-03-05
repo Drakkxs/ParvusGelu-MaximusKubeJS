@@ -16,7 +16,7 @@ PlayerEvents.tick(event => {
         playerReach = 5;
     }
 
-    let rayTraceResult = player.rayTrace(Math.ceil(playerReach / 2));
+    let rayTraceResult = player.rayTrace(Math.ceil(playerReach * 10) / 10);
     if (rayTraceResult && rayTraceResult.block) {
         let block = rayTraceResult.block;
         let blockStringId = block.id.toString();
