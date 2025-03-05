@@ -1,0 +1,36 @@
+{
+  "world": [
+    "world",
+    "gamerules",
+    "locate"
+  ],
+  "entities": [
+    "summon",
+    "butcher"
+  ],
+  "blocks": [
+    "edit_blocks",
+    "sign_editor",
+    "note_editor"
+  ],
+  "main": [
+    "main",
+    "containers",
+    "multiplayer"
+  ],
+  "scoreboard": [
+    "scoreboard_objectives",
+    "scoreboard_teams",
+    "scoreboard_players"
+  ],
+  "items": [
+    "custom_item",
+    "enchantment",
+    "recipes"
+  ],
+  "player": [
+    "player",
+    "experience",
+    "advancements"
+  ]
+}

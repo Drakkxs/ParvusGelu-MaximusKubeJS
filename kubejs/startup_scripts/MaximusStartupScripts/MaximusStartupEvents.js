@@ -6,7 +6,7 @@
 // requires: toughasnails
 // This script is designed to control startup of the Maximus ScriptPack
 // It is not the best way to do it, but it is a way to do it.
-let debuglogs = false; // Want some debug?
+let maximusStartupEventsDebug = false; // Want some debug?
 
 // === Event Landscape ===
 StartupEvents.registry('mob_effect', event => {
@@ -121,7 +121,7 @@ function getPotionItem(potionID, variation) {
 
   let created = potionID;
 
-  if (debug) console.log(potionID);
+  if (maximusStartupEventsDebug) console.log(potionID);
   return created
 }
 
@@ -134,7 +134,7 @@ function realswig(event, instance, thirst, hydration) {
   ThirstInstance.setThirst(Math.max(0, Math.min(20, calcThirst)));
   ThirstInstance.setHydration(Math.max(0, Math.min(20, calcHydration)));
 
-  if (debug) {
+  if (maximusStartupEventsDebug) {
     console.log(`Player thirst: ${ThirstInstance.getThirst()}`);
     console.log(`Player hydration: ${ThirstInstance.getHydration()}`);
     console.log(`Player exhaustion: ${ThirstInstance.getExhaustion()}`);

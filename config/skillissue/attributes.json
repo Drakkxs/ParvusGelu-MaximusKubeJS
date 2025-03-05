@@ -1,0 +1,46 @@
+{
+  "attributes": [
+    {
+      "key": "generic.max_health",
+      "bonus": 0.0,
+      "min_factor": 0.8,
+      "max_factor": 2.0
+    },
+    {
+      "key": "generic.armor_toughness",
+      "bonus": 3.0,
+      "min_factor": 0.0,
+      "max_factor": 1.0
+    },
+    {
+      "key": "generic.knockback_resistance",
+      "bonus": 0.25,
+      "min_factor": 0.0,
+      "max_factor": 1.0
+    },
+    {
+      "key": "generic.movement_speed",
+      "bonus": 0.0,
+      "min_factor": 0.9,
+      "max_factor": 1.15
+    },
+    {
+      "key": "generic.attack_damage",
+      "bonus": 0.0,
+      "min_factor": 0.9,
+      "max_factor": 1.25
+    },
+    {
+      "key": "generic.attack_speed",
+      "bonus": 0.0,
+      "min_factor": 0.9,
+      "max_factor": 1.25
+    },
+    {
+      "key": "generic.attack_knockback",
+      "bonus": 0.25,
+      "min_factor": 0.0,
+      "max_factor": 1.0
+    }
+  ]
+}

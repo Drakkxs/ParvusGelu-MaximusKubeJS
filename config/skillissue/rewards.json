@@ -1,0 +1,74 @@
+{
+  "milestones": [
+    {
+      "level": 1,
+      "level_step": 1,
+      "level_range": 140,
+      "on_level_up": true,
+      "on_respawn": false,
+      "on_login": false,
+      "is_volatile": false,
+      "level_inject": "<level>",
+      "commands": [
+        "title @s subtitle \"Current Level: <level>\"",
+        "title @s title \"You feel stronger!\""
+      ]
+    },
+    {
+      "level": 100,
+      "level_step": 1,
+      "level_range": 1,
+      "on_level_up": true,
+      "on_respawn": false,
+      "on_login": false,
+      "is_volatile": false,
+      "level_inject": "<level>",
+      "commands": [
+        "title @s subtitle \"Current Level: <level>\"",
+        "title @s title \"This is it!\""
+      ]
+    },
+    {
+      "level": 140,
+      "level_step": 1,
+      "level_range": 1,
+      "on_level_up": true,
+      "on_respawn": false,
+      "on_login": false,
+      "is_volatile": false,
+      "level_inject": "<level>",
+      "commands": [
+        "title @s subtitle \"Current Level: <level>\"",
+        "title @s title \"Powerlevel > 9000\""
+      ]
+    },
+    {
+      "level": 0,
+      "level_step": 1,
+      "level_range": 141,
+      "on_level_up": false,
+      "on_respawn": true,
+      "on_login": false,
+      "is_volatile": false,
+      "level_inject": "<level>",
+      "commands": [
+        "title @s subtitle \"Current Level: <level>\"",
+        "title @s title \"You feel weakened...\""
+      ]
+    },
+    {
+      "level": 0,
+      "level_step": 1,
+      "level_range": 140,
+      "on_level_up": false,
+      "on_respawn": false,
+      "on_login": true,
+      "is_volatile": false,
+      "level_inject": "<level>",
+      "commands": [
+        "title @s subtitle \"Current Level: <level>\"",
+        "title @s title \"Where was I again?\""
+      ]
+    }
+  ]
+}

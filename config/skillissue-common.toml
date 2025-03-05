@@ -1,0 +1,23 @@
+
+["Player Levels"]
+	#The maximum level for a player to gain benefits from 'attribute_modifications'.
+	#Range: > 1
+	max_player_level = 140
+	#This factor is applied to a players level upon death. All 'attribute_modifications' up to the new level remain. Additionally 'milestone_penalties' are applied for the lost levels.
+	#Range: 0.0 ~ 1.0
+	death_penalty_factor = 0.8
+
+["Chunk Xp"]
+	#This value determines the max 'scaled exp' that can be picked up in an area (3x3 chunks) before the effect of the 'chunk_xp_penalty_factor' is fully applied. This value also affects the time it takes before a chunk has fully recorvered from the penalty.
+	#Range: > 1
+	chunk_xp_threshold = 48000
+	#This value determines the speed per tick at which a chunk regenerates from its accumulated xp.
+	#Range: > 1
+	chunk_xp_regen_per_tick = 1
+	#This factor is applied to any xp picked up by players before beeing added to a chunks xp pool. This value affects the time it takes before a chunk has reached its xp threshold. Setting this to 0 will completely disable all chunk xp features.
+	#Range: 0.0 ~ 1.7976931348623157E308
+	chunk_xp_scale = 20.0
+	#This value determines the minimum factor that can be applied to any xp picked up by a player. The factor linearly shrinks from 1 towards this value based of the xp pool in the players chunk in relation to the 'chunk_xp_threshold'.
+	#Range: 0.0 ~ 1.0
+	chunk_xp_penalty_factor = 0.2
+

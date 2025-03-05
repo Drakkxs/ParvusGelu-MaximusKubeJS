@@ -1,0 +1,16 @@
+
+["Moderate Loading Screen"]
+	backgroundColor = 1447446
+	#Range: 0 ~ 100
+	logoOpacity = 100
+	#Range: 0 ~ 100
+	barOpacity = 100
+	modsOnlyOnce = false
+	modIdBlacklist = ["forge", "minecraft"]
+	iconSize = 32
+	#Allowed Values: SNOWFLAKES, STACKING
+	screenType = "STACKING"
+	#Allowed Values: DOWN, RIGHT, UP, LEFT
+	orientation = "DOWN"
+	cycleSeconds = 20
+
