@@ -4,7 +4,7 @@
 let debug = false; // Want some debug?
 
 ItemEvents.tooltip(event => {
-    event.add("#kubejs:flesh_crafting_materials", [
+    event.add("#kubejs:forbidden_items", [
         Component.of("Forbidden Item").red().italic(),
         Component.of("Anything to reach the sun.").italic().darkRed()
     ])
