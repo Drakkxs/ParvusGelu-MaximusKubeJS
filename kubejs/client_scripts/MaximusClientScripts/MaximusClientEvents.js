@@ -1,7 +1,7 @@
 /// priority: 0
 // This script is to control the client side of the Maximus ScriptPack
 // It is not the best way to do it, but it is a way to do it.
-let debug = false; // Want some debug?
+let maximusClientEventsDebugLogs = false; // Want some debug?
 
 ItemEvents.tooltip(event => {
     event.add("#kubejs:forbidden_items", [
