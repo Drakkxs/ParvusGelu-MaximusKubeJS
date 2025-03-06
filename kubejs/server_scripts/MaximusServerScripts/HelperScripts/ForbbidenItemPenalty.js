@@ -1,7 +1,7 @@
 /// priority: 0
 // If you hold a forbidden item, things will happen
 // It is not the best way to do it, but it is a way to do it.
-let forbiddenItemPenaltyDebug = true; // Want some debug?
+let forbiddenItemPenaltyDebug = false; // Want some debug?
 ServerEvents.tags('item', event => {
     event.add('kubejs:forbidden_items', [
         'kubejs:fermented_heart'
@@ -15,18 +15,19 @@ function addEnforcersAndAssignGoals() {
     // Iterate over each entity type in the registry
     for (let type of ForgeRegistries.ENTITY_TYPES) {
         // Create an instance of the entity
+        if (forbiddenItemPenaltyDebug && Utils.server == null) console.warn('No server found. Please run /reload');
         let entity = type.create(Utils.server.getLevel("minecraft:overworld"));
 
         // Check if the entity is valid, alive, not a player, and not already an enforcer
         if (entity && entity.isAlive() && !entity.isPlayer() && !enforcers.includes(entity.type)) {
             // Add the entity type to the enforcers list
             enforcers.push(entity.type);
-            console.log(`Added ${entity.type} to list of enforcers`);
+            if (forbiddenItemPenaltyDebug) console.log(`Added ${entity.type} to list of enforcers`);
         }
     }
 
     // All enforcers have been added
-    console.log('All enforcers have been added.');
+    if (forbiddenItemPenaltyDebug) console.log('All enforcers have been added.');
 }
 
 // Call the function to add enforcers and assign goals

@@ -1,7 +1,7 @@
 /// priority: 0
 // This script is designed to control the server side of the Maximus ScriptPack
 // It is not the best way to do it, but it is a way to do it.
-let maximusServerEventsDebugLogs = true; // Want some debug?
+let maximusServerEventsDebugLogs = false; // Want some debug?
 
 /** @type {Internal.IForgeRegistry<Internal.Potion>} */
 let PotionItems = ForgeRegistries.POTIONS;
