@@ -22,7 +22,7 @@ StartupEvents.registry('mob_effect', event => {
 
 StartupEvents.registry('potion', event => {
   console.log('Registering Emberwine Potions');
-  let created = event.created; let b;
+  // let created = event.created; let b;
   // Create base potion effect.
   potRegister(event, "kubejs:emberflow", "kubejs:emberwine", "45s", 1);
   potRegister(event, "kubejs:emberflow", "kubejs:long_emberwine", "1m30s", 1);
