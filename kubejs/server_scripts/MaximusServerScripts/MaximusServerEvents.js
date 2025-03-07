@@ -89,8 +89,9 @@ function potionringrecipes(event, potion, resourceKey, outputID, baseID) {
 
     // If the potion effect is instant avoid granting access to it
     if (potionEffect.isInstantenous()) {
-        if (maximusServerEventsDebugLogs) console.log(`Found instant effect ${potionEffect} from potion ${resourceKey.location()}`);
-        console.log("Instant effects are BANNED!");
+        if (maximusServerEventsDebugLogs) {
+            console.log(`Found instant effect ${potionEffect} from potion ${resourceKey.location()}`);
+            console.log("Instant effects are BANNED!");}
         return;
     }
 
