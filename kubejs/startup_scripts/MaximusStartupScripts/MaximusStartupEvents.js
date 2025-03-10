@@ -125,23 +125,6 @@ function getPotionItem(potionID, variation) {
   return created
 }
 
-// A better version of the drink function.
-function realswig(event, instance, thirst, hydration) {
-  if (!instance) return;
-  let ThirstInstance = instance;
-  let calcThirst = ThirstInstance.getThirst() + thirst;
-  let calcHydration = ThirstInstance.getHydration() + hydration;
-  ThirstInstance.setThirst(Math.max(0, Math.min(20, calcThirst)));
-  ThirstInstance.setHydration(Math.max(0, Math.min(20, calcHydration)));
-
-  if (maximusStartupEventsDebug) {
-    console.log(`Player thirst: ${ThirstInstance.getThirst()}`);
-    console.log(`Player hydration: ${ThirstInstance.getHydration()}`);
-    console.log(`Player exhaustion: ${ThirstInstance.getExhaustion()}`);
-    console.log(`Is player thirsty? ${ThirstInstance.isThirsty()}`);
-  }
-}
-
 global.effectActionEmberflow = (event, entity, lvl) => {
   // Adjust level to start at 1 for calculation purposes
   let adjustedLevel = lvl + 1;
@@ -151,25 +134,35 @@ global.effectActionEmberflow = (event, entity, lvl) => {
     if (!ThirstInstance) return;
 
     if (entity.age % 20 === 0) {
-      // Apply base hydration effect, ensuring minimum effect even at level 0
-      let currentThirst = ThirstInstance.getThirst();
-      realswig(event, ThirstInstance, 1 * adjustedLevel, 0);
-      realswig(event, ThirstInstance, 0, 0.5 * adjustedLevel);
+      let totalThirstChange = 0;
+      let totalHydrationChange = 0;
 
-      // Adjust chance and boost of random bonus hydration with adjusted level
+      // Base effect
+      totalThirstChange += 1 * adjustedLevel;
+      totalHydrationChange += 0.5 * adjustedLevel;
+
+      // Random bonus
       if (Math.random() < (0.1 + 0.05 * adjustedLevel)) {
-        realswig(event, ThirstInstance, 2 * adjustedLevel, 0);
-        realswig(event, ThirstInstance, 0, 1 * adjustedLevel);
+        totalThirstChange += 2 * adjustedLevel;
+        totalHydrationChange += 1 * adjustedLevel;
       }
+
+      // Nether bonus
+      let isInNether = entity.level.dimension == 'minecraft:the_nether';
+      if (isInNether && Math.random() < (0.15 + 0.05 * adjustedLevel)) {
+        totalThirstChange += 1 * adjustedLevel;
+        totalHydrationChange += 0.5 * adjustedLevel;
+      }
+
+      // Apply combined effects
+      let calcThirst = ThirstInstance.getThirst() + totalThirstChange;
+      let calcHydration = ThirstInstance.getHydration() + totalHydrationChange;
+      ThirstInstance.setThirst(Math.max(0, Math.min(20, calcThirst)));
+      ThirstInstance.setHydration(Math.max(0, Math.min(20, calcHydration)));
 
       // Adjust exhaustion reduction with adjusted level
       if (entity.age % 100 === 0) {
         ThirstInstance.setExhaustion(Math.max(0, Math.min(20, ThirstInstance.getExhaustion() + -0.25 * adjustedLevel)));
-      }
-
-      let isInNether = entity.level.dimension == 'minecraft:the_nether';
-      if (isInNether && Math.random() < (0.15 + 0.05 * adjustedLevel)) {
-        realswig(event, ThirstInstance, 1 * adjustedLevel, 0.5 * adjustedLevel);
       }
     }
 
