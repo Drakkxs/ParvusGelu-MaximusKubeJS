@@ -33,6 +33,7 @@ PlayerEvents.tick(event => {
     }
 });
 
+
 function realSwig(event, instance, thirst, hydration) {
 
     if (!instance) return;
