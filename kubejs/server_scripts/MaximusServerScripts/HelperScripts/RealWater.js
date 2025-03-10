@@ -22,18 +22,18 @@ PlayerEvents.tick(event => {
         let blockStringId = block.id.toString();
         if (blockStringId.includes("minecraft") && blockStringId.includes("water")) {
             if (player.isCrouching() && Client.rightClickDelay != 0) {
-                realswig(event, ThirstInstance, 3, 3);
+                realSwig(event, ThirstInstance, 3, 3);
 
                 // Adjust chance and boost of random bonus hydration
                 if (Math.random() < (0.1 + 0.05)) {
-                    realswig(event, ThirstInstance, 1, 0);
-                    realswig(event, ThirstInstance, 0, 1);
+                    realSwig(event, ThirstInstance, 1, 1);
                 }
             }
         }
     }
 });
-function realswig(event, instance, thirst, hydration) {
+
+function realSwig(event, instance, thirst, hydration) {
 
     if (!instance) return;
     let ThirstInstance = instance;
