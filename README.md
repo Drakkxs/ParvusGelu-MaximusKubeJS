@@ -1,7 +1,6 @@
 DISCLAIMER:
 This script pack is for friends and released publicly to ensure access.
-Be warned the best attempt was made but this is not meant for widespread use on some global scale.
-This is a hobby, and issues will be solved with that in mind.
+Be warned the best attempt was made but this is a hobby.
 
 REQUIRED MODS:
 The required mods are included with this pack as it's a dev pack. 
